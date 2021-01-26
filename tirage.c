@@ -21,28 +21,7 @@ Tirage tirageDe() {
   return tirage;
 }
 
-void choixDe(Tirage *tirageTEMP, Tirage *tirageDE) {
-
-  printf("+---+---+---+---+---+\n");
-  printf("| %d | %d | %d | %d | %d |\n",tirageDE->de1,tirageDE->de2,tirageDE->de3,tirageDE->de4,tirageDE->de5);
-  printf("+---+---+---+---+---+\n\n\n");
-
-  printf("+---+---+---+---+---+\n");
-  printf("| %d | %d | %d | %d | %d |\n",tirageTEMP->de1,tirageTEMP->de2,tirageTEMP->de3,tirageTEMP->de4,tirageTEMP->de5);
-  printf("+---+---+---+---+---+\n\n\n");
-
-  char choix = 'q';
-  do {
-    printf("que voulez vous faire ?\n");
-    printf("a - Choisir un dé à enlever\n");
-    printf("d - Choisir un dé à ajouter\n");
-    printf("q - Quitter\n");
-    printf("==> ");
-    scanf("\n%c",&choix);
-  } while (choix != 'q');
-};
-
-void lance() {
+void lance() {  
   int nblance = 1;
   char playerChoice = 'n';
   Tirage tirageFinal;
@@ -61,7 +40,7 @@ void lance() {
       tirageTEMP = tirageDe();
       printf("Resultat tirage:\n");
 
-      choixDe(&tirageTEMP,&tirageFinal);
+      //choixDe(&tirageTEMP,&tirageFinal);
 
       nblance++;
     }

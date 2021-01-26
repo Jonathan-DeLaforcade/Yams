@@ -9,8 +9,13 @@
 
 int main() {
   srand(time(NULL));
-    //menu();
+    int gameChoice = mainMenu();
+    switch(gameChoice) {
+      case 1: {
+        break;
+      }
+    }
     //sauvegarde();
-    lance();
+    //lance();
     return 0;
 }

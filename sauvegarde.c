@@ -3,6 +3,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include "sauvegarde.h"
+#include "joueur.h"
 
 #define MAXPSEUDOSIZE 10
 
