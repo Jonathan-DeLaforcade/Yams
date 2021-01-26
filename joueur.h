@@ -2,7 +2,7 @@
 #define JOUEUR
 
 struct joueur {
-  char* pseudo;
+  char *pseudo;
   int score;
   int nbLance;
 };

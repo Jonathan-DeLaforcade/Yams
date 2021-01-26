@@ -1,6 +1,7 @@
 #ifndef LEVEL
 #define LEVEL
 
-  int level()
+  int mainGame();
+  int level();
 
-#endif LEVEL
+#endif
