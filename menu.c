@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "menu.h"
 
-int menu(){
+int mainMenu(){
 
     int choix = 0;
     printf("Bienvenue dans le jeu du YAM ! Que voulez-vous faire ? \n");
@@ -32,4 +32,10 @@ int menu(){
                 break;
             }
     return 0;
+}
+
+
+int choiceDice(){
+
+  return 0;
 }
