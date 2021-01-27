@@ -54,10 +54,8 @@ int setPlayer(joueur * Player, int index){
     free(Player->pseudo); // Échec réallocation
     return 0;
   }
-  Player->nbLance = 0;
-  Player->score = 0;
   
-  printf("Entrez votre pseudo du joueur n° %d (max 15 caracteres):", index);
+  printf("Entrez votre pseudo du joueur n° %d (max 15 caracteres):", index+1);
   scanf("%s", Player->pseudo);
   
   //strcpy(Player->pseudo,"coucou");
@@ -73,7 +71,9 @@ int getNbPlayer(){
   return nbJoueur;
 };
 
-
-
-
-
+int getNbManche(){
+  int nbManche;
+  printf("Combien de manche voulez vous jouer ? (entre 1 et 10): ");
+  scanf("%d", &nbManche);
+  return nbManche;
+};

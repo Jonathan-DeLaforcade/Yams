@@ -9,13 +9,13 @@
 
 //FILE* sauvegarde = fopen("/home/runner/Yams/sauvegarde.txt", "a+");
 void sauvegarde(){
-  
+  /*
   joueur j1;
   j1.pseudo = (char *) malloc(sizeof(char) * MAXPSEUDOSIZE);
   strcpy(j1.pseudo, "Jonathan");
   j1.score = 1;
   joueur j2;
-
+  */
   FILE* sauvegarde = fopen("sauvegarde.txt","a+");
   /*
   fwrite(j1.pseudo,sizeof(j1.pseudo),1,sauvegarde);  

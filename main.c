@@ -21,6 +21,7 @@ int main() {
     3: Afficher l'aide
     4: Quitter
   */
+ 
   int gameChoice = mainMenu();
   switch(gameChoice) {
     case 1: { mainGame(); break;}

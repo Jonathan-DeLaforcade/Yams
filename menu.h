@@ -5,4 +5,5 @@ int mainMenu();
 int choiceDice();
 int setPlayer(joueur * Player,int index);
 int getNbPlayer();
+int getNbManche();
 #endif // MENU_H_INCLUDED
