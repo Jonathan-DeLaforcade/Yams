@@ -9,4 +9,13 @@ struct joueur {
 
 typedef struct joueur joueur;
 
+struct score {
+  char *pseudo;
+  int score;
+  int nbLance;
+};
+
+typedef struct score score;
+
+
 #endif

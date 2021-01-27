@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "menu.h"
-#include "joueur.h"
+#include <string.h>
 
 int mainMenu(){ // Fonction pour afficher le menu
     int choix = 0;
@@ -35,8 +35,8 @@ int choiceDice(tirageDE,tirageTEMP){
   char choix = 'q';
   do {
     printf("que voulez vous faire ?\n");
-    printf("a - Choisir un dé à enlever\n");
-    printf("d - Choisir un dé à ajouter\n");
+    printf("d - Choisir un dé à enlever\n");
+    printf("a - Choisir un dé à ajouter\n");
     printf("q - Quitter\n");
     printf("==> ");
     scanf("\n%c",&choix);
@@ -45,17 +45,33 @@ int choiceDice(tirageDE,tirageTEMP){
   return 0;
 }
 
-int setPlayer(joueur * Player){
+int setPlayer(joueur * Player, int index){
 
-  //printf("Entrez votre pseudo :");
-  //scanf("%s", Player->pseudo);
-
+  Player->pseudo = (char *) malloc(sizeof(char)*15);
+  
+  if (Player->pseudo == NULL) {
+    printf("Echec allocation Player->Pseudo");
+    free(Player->pseudo); // Échec réallocation
+    return 0;
+  }
+  Player->nbLance = 0;
+  Player->score = 0;
+  
+  printf("Entrez votre pseudo du joueur n° %d (max 15 caracteres):", index);
+  scanf("%s", Player->pseudo);
+  
+  //strcpy(Player->pseudo,"coucou");
   //printf("%s", Player->pseudo);
 
   return 0;
 }
 
-
+int getNbPlayer(){
+  int nbJoueur;
+  printf("Combien de joueur etes-vous ?: ");
+  scanf("%d", &nbJoueur);
+  return nbJoueur;
+};
 
 
 

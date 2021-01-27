@@ -3,5 +3,6 @@
 #include "joueur.h"
 int mainMenu();
 int choiceDice();
-int getPlayerPseudo(joueur *Player);
+int setPlayer(joueur * Player,int index);
+int getNbPlayer();
 #endif // MENU_H_INCLUDED

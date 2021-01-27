@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-#include "tirage.h"
+// #include "tirage.h"
 #include "menu.h"
 #include "level.h"
 //#include "sauvegarde.h"
@@ -27,7 +27,7 @@ int main() {
     case 2: { /*showScores();*/ break;}
     case 3: { /*showHelp();*/ break;}
     case 4: {break;}
-    default: {main(); break;}
+    default: {/*main();*/ break;}
   }
 
     //sauvegarde();

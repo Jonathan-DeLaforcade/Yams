@@ -1,9 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
 #include "level.h"
-#include "joueur.h"
 #include "menu.h"
 // FONCTION MAINGAME //
 /*
@@ -11,15 +9,12 @@
 */
 
 int mainGame() {
-  //joueur *joueurs[2];
-  joueur *player1;
+  int nbJoueur = getNbPlayer();
+  struct joueur players[nbJoueur];
 
-  player1->pseudo = (char *) malloc(sizeof(char)*15);
-  //strcpy(player1->pseudo,"coucou");
-
-  //setPlayer(& joueurs[0]);
-  //setPlayer(& joueurs[1]);
-
+  for (int idx = 1; idx<=nbJoueur; idx++) {
+    setPlayer(&players[0],idx);
+  }
 
   return 0;
 }
