@@ -4,6 +4,8 @@
 #include "level.h"
 #include "menu.h"
 #include "joueur.h"
+#include "tirage.h"
+
 // FONCTION MAINGAME //
 /*
   cette fonction gére la loop du jeux pour le passage du lancement du dé pour chaque joueurs
@@ -88,6 +90,25 @@ void result(int tableau[5], int result[6]){
   result[5] = yams;
 }
 
+int checkIfGrilleFinish(joueur players[],int nbPlayers,int nbManche) {
+  int result = 1;
+  for (int idxPlayer = 0;idxPlayer<nbPlayers;idxPlayer++){
+    for (int scoreIndex = 0; scoreIndex<15;scoreIndex++){
+      if(players[idxPlayer].scores[nbManche][scoreIndex] != 0){
+        result = 0;
+      }
+    }
+  }
+  return result;
+}
+
+int level(joueur *joueur, int playerIndex) {
+  printf("====> Joueur %d, %s c'est a vous de jouer <====\n",playerIndex+1,joueur->pseudo);
+  lance();
+  return 0;
+}
+
+
 int mainGame() {
   int nbManche = getNbManche();
   int nbJoueur = getNbPlayer();
@@ -95,20 +116,26 @@ int mainGame() {
 
   for (int idx = 0; idx<=nbJoueur-1; idx++) {
     setPlayer(&players[idx],idx);
-  }
-
-  for (int mancheEnCours = 0; mancheEnCours<nbManche;mancheEnCours++) {
-    printf("==> Manche N°%d <==\n",mancheEnCours+1);
-    for (int joueurActuel = 0;joueurActuel<nbJoueur;joueurActuel++){
-      printf("%d - %s\n",joueurActuel,(players[joueurActuel]).pseudo);
-      //level(&players[joueurActuel],joueurActuel);
+    for (int i=0;i<nbManche;i++) {
+      for (int j=0;j<15;j++){
+        players[idx].scores[i][j] = 0;
+      }
     }
   }
 
-  return 0;
-}
+  for (int mancheEnCours = 0; mancheEnCours<nbManche;mancheEnCours++) {
+    int continueLevels = 0;
+    printf("==> Manche N°%d <==\n",mancheEnCours+1);
+    do {
+      continueLevels = checkIfGrilleFinish(players,nbJoueur,mancheEnCours);
+      printf("==> aucuns joueur n'a fini sa grille, on continue \n");
+      for (int joueurActuel = 0;joueurActuel<nbJoueur;joueurActuel++){
+        
+        //printf("%d - %s\n",joueurActuel,(players[joueurActuel]).pseudo);
+        level(&players[joueurActuel],joueurActuel);
+      }
+    } while (continueLevels);
+  }
 
-int level(joueur *joueur, int playerIndex) {
-  printf("====> Joueur %d, %s c'est a vous de jouer <====\n",playerIndex+1,joueur->pseudo);
   return 0;
 }

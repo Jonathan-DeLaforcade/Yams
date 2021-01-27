@@ -57,7 +57,7 @@ int setPlayer(joueur * Player, int index){
   
   printf("Entrez votre pseudo du joueur n° %d (max 15 caracteres):", index+1);
   scanf("%s", Player->pseudo);
-  
+
   //strcpy(Player->pseudo,"coucou");
   //printf("%s", Player->pseudo);
 
