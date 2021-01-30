@@ -31,7 +31,7 @@
 
 struct joueur {
   char *pseudo;
-  int scores[10][15];
+  int scores[10][16];
 };
 
 typedef struct joueur joueur;
